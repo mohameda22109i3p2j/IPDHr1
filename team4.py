@@ -7,8 +7,8 @@
 ####
 
 team_name = 'Mohamed_ali' # Only 10 chars displayed.
-strategy_name = 'History'
-strategy_description = 'return collude or betray using their history'
+strategy_name = 'collude until betrayed'
+strategy_description = 'return collude until betray '
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -27,11 +27,11 @@ def move(my_history, their_history, my_score, their_score):
     # Decide whether to return 'c' or 'b'.
     
     if len(their_history) == 0:
-        return 'b'
+        return 'c'
     elif their_history[-1]=='c':
-        return 'c'
+        return 'b'
     else:
-        return 'c'
+        return 'b'
 
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
